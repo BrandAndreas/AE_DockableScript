@@ -17,6 +17,13 @@
             "name": "Dockable Script",
             "program": "${workspaceFolder}/dockableScript.jsx",
             "stopOnEntry": false
+        },
+        {
+            "type": "extendscript-debug",
+            "request": "launch",
+            "name": "Cheeting Script",
+            "program": "${workspaceFolder}/cheetingScript.jsx",
+            "stopOnEntry": false
         }
     ]
 }
