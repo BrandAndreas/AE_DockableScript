@@ -21,11 +21,16 @@
             // Defaults / Functionalites
 
             myPanel.grp.groupOne.createCompButton.onClick = function () {
-
+                createComp();
             }
 
             myPanel.grp.groupTwo.deleteCompButton.onClick = function () {
-                
+                if(app.project.activeItem == undefined || app.project.activeItem == null) {
+                    alert("Bitte eine Komposition auswählen.");
+                    return false;
+                } else {
+                    deleteActiveComp(app.project.activeItem);
+                }
             }
 
             myPanel.grp.groupTwo.deleteCompButton.size = [25,25];
@@ -47,4 +52,12 @@
         }
     }
     myScript(this);
+}
+
+function createComp () {
+    app.project.items.addComp("Neue Komposition", 1920, 1080, 1, 10, 30);
+}
+
+function deleteActiveComp (comp) {
+    comp.remove();
 }
